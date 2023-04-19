@@ -6,6 +6,37 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
     <body>
-        <h1>Hello</h1>
+        <nav class="navbar">
+            <div class="title">QuickVote</div>
+                <div class="ham" >
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+                <ul class="nav-sub">
+                    <li class="list-item"><a href="#" class="nav-link">Voter Guide</a></li>
+                    <li class="list-item"><a href="#" class="nav-link">Ballot Tracker</a></li>
+                    <li class="list-item"><a href="#" class="nav-link">Account</a></li>
+                </ul>
+        </nav>
+
+        <h1>City Elections</h1>
+        <h3>Are You Ready To Vote?</h3>
+        <p>Here will be a summary of this election.</p>
+        <div class="options">
+            <button class="buttonH">Propositions</button>
+            <button class="buttonH">Candidates</button>
+        </div>
+        
+
     </body>
+    <script>
+         const hamburger = document.querySelector(".ham");  
+        const navsub = document.querySelector(".nav-sub");  
+        hamburger.addEventListener('click', () => {  
+        hamburger.classList.toggle("change")  
+        navsub.classList.toggle("nav-change")  
+        });  
+        
+    </script>
 </html>

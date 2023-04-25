@@ -6,19 +6,26 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
     <body>
-        <nav class="navbar">
-            <div class="title">QuickVote</div>
-                <div class="ham" >
-                    <span class="bar1"></span>
-                    <span class="bar2"></span>
-                    <span class="bar3"></span>
-                </div>
-                <ul class="nav-sub">
-                    <li class="list-item"><a href="#" class="nav-link">Voter Guide</a></li>
-                    <li class="list-item"><a href="#" class="nav-link">Ballot Tracker</a></li>
-                    <li class="list-item"><a href="#" class="nav-link">Account</a></li>
-                </ul>
-        </nav>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Top Navigation Menu -->
+        <div class="topnav">
+        <a href="#home" class="active">QuickVote</a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <a href="#news">Voter Guide</a>
+            <a href="#contact">Ballot Tracker</a>
+            <a href="#about">Account</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        </div>
+        <div class="imageBG">
+            <img src="images/voting background.png.jpg">
+
+        </div>
 
         <h1>City Elections</h1>
         <h3>Are You Ready To Vote?</h3>
@@ -31,12 +38,14 @@
 
     </body>
     <script>
-         const hamburger = document.querySelector(".ham");  
-        const navsub = document.querySelector(".nav-sub");  
-        hamburger.addEventListener('click', () => {  
-        hamburger.classList.toggle("change")  
-        navsub.classList.toggle("nav-change")  
-        });  
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
         
     </script>
 </html>

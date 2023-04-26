@@ -45,7 +45,13 @@ app.get('/voting-page', function (req, res) {
 });
 
 //depending on what url extension the user navigates to, send them the respective html file. 
+app.get("/proposition", function (req, res) {
+  res.sendFile(path.join(publicPath + "/proposition.html"));
+});
 
+app.get("/candidate", function (req, res) {
+  res.sendFile(path.join(publicPath + "/candidate-info.html"));
+});
 
 //run this server by entering "node App.js" using your command line. 
    app.listen(port, () => {

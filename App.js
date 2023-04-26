@@ -35,8 +35,8 @@ router.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/"));
 });
 
-app.get('/test', function (req, res) {
-  res.sendFile(publicPath + '/test.html');
+app.get('/voting-page', function (req, res) {
+  res.sendFile(publicPath + '/voting-page.html');
 });
 
 //depending on what url extension the user navigates to, send them the respective html file. 

@@ -28,8 +28,6 @@ app.use(express.static(publicPath));  //tell express to use that folder
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 
-
-
 //here's where we specify what to send to users that connect to our web server...
 //if there's no url extension, it will show "index.html"
 router.get("/", function (req, res) {
@@ -41,6 +39,9 @@ app.get('/guide', function (req, res) {
 });
 app.get("/ballot-tracker", function (req, res) {
   res.sendFile(path.join(publicPath + "/ballot-tracker.html"));
+});
+app.get('/voting-page', function (req, res) {
+  res.sendFile(publicPath + '/voting-page.html');
 });
 
 //depending on what url extension the user navigates to, send them the respective html file. 

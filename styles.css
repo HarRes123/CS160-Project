@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+  }
+body { /*default body style (black Verdana)*/
+    font-family:Verdana;
+    color:#000000; 
+    background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+  

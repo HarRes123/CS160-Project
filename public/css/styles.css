@@ -49,17 +49,85 @@ html{
   height:100%;
 }
 h1{
-    color: black;
-    text-align: center;
-    padding: 10px;
-    font-size: 3em;
-    font-weight: 700;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 44px;
+  /* or 105% */
+  text-align: center;
+  
+  color: #444444;
 }
 h3{
-    color: black;
-    text-align: center;
-    padding: 10px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 44px;
+  /* or 105% */
+  text-align: center;
+  color: #4F4F4F;
+  padding: 10px;
 }
+p{
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 44px;
+  text-align: center;
+  color: #4F4F4F;
+  padding: 10px;
+}
+
+/* Img Hover*/
+.imgContainer:hover .middle {
+  opacity: 1;
+}
+.imgContainer:hover .middle {
+  opacity: 1;
+}
+.imgContainer {
+  position: relative;
+  width: 500px;
+  height:300px;
+  display: flex;
+  background-color: #7E7E7E;
+  margin: auto;
+  margin-bottom: 10%;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.propsIMG {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 80%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  justify-content: center;
+  background-color: navy;
+  margin-left: auto;
+  margin-right: auto;
+}
+#candContent{
+  padding-top: 10%;
+}
+.boxedContent, .innerTxt{
+  color: #EEEEEE;
+}
+
+
+/* IMG Hover extion Over  */
 .buttonH {
   align-items: center;
   appearance: none;
@@ -132,8 +200,4 @@ h3{
 .options{
     text-align: center;
     padding-top: 50px;
-}
-p{
-    text-align: center;
-    padding: 10px;
 }

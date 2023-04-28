@@ -80,6 +80,17 @@ p{
   color: #4F4F4F;
   padding: 10px;
 }
+.boxes{
+  width: 100%;
+}
+#box1{
+  width: 50%;  
+  float: left;
+}
+#box2{
+  margin-left: 50%; 
+  
+}
 
 /* Img Hover*/
 .imgContainer:hover .middle {
@@ -92,7 +103,6 @@ p{
   position: relative;
   width: 500px;
   height:300px;
-  display: flex;
   background-color: #7E7E7E;
   margin: auto;
   margin-bottom: 10%;
@@ -126,8 +136,61 @@ p{
   color: #EEEEEE;
 }
 
+/* IMG Hover  Over  */
 
-/* IMG Hover extion Over  */
+/* Bracket Voting Location  Start  */
+#pollLink{
+  margin: auto;
+}
+.bracket {
+  width: 30%;
+	height: 115px;
+	background: #EEEEEE;
+	position: relative;
+	margin: auto;
+  border-right: 4px solid #B9B2C0;
+  border-left: 4px solid #B9B2C0;
+  text-align: center;
+}
+
+
+.bracket span.left:after,
+.bracket span.left:before,
+.bracket span.right:after,
+.bracket span.right:before {
+  content: '';
+	width: 60px;
+	height: 4px;
+	background: #B9B2C0;
+	position: absolute;
+}
+
+.bracket span.left:before,
+.bracket span.right:before {
+	top: 0;
+}
+
+.bracket span.left:after,
+.bracket span.right:after {
+	bottom: 0;
+}
+
+.bracket span.left:after,
+.bracket span.left:before {
+	left: 0;
+}
+
+.bracket span.right:after,
+.bracket span.right:before {
+	right: 0;
+}
+/* Bracket Voting Location  Over  */
+#intro{
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+}
 .buttonH {
   align-items: center;
   appearance: none;

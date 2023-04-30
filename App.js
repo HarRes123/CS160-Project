@@ -35,7 +35,7 @@ router.get("/", function (req, res) {
 });
 //depending on what url extension the user navigates to, send them the respective html file. 
 router.get("/electionStarter", function (req, res) {
-  res.sendFile(path.join(__dirname, "/electionStarter"));
+  res.sendFile(path.join(__dirname, "/electionStarter.html"));
 });
 
 //run this server by entering "node App.js" using your command line. 

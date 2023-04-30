@@ -1,5 +1,89 @@
-body{
-  background-color: #EEEEEE;
+html{
+  scroll-behavior: smooth;
+}
+html, .main{
+  background-color: #F5F5F5;
   height: 100%;
   overflow: auto;
+  margin:0;
+}
+.navbar-light .navbar-toggler{
+    border-color: transparent;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(66,66,66,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-light .navbar-nav .nav-item .nav-link{
+  color:#424242;
+}
+h1{
+  color:#444444;
+  text-align: center;
+  margin-top: 5%;
+}
+h3{
+  color:#4F4F4F;
+  text-align: center;
+  margin-top: 12.88%;
+  margin-bottom: 15%;
+}
+
+.btn-vote{
+  background-color: #C8C7C7;
+  border-color: transparent;
+  color: #424242;
+}
+.btn-cand{
+  background-color: #424242;
+  border-color: transparent;
+}
+.next{
+  text-align: center;
+  
+}
+#moreInf{
+  font-size: 24px;
+  color:#4F4F4F;
+}
+.downArrow{
+  border-color: transparent;
+}
+a.downArrow:before{
+  position: absolute;
+  content:"";
+}
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(5.3em);
+    opacity: 0;
+  }
+}
+a.downArrow:after {
+  position: absolute;
+}
+section {
+  height: 95vh;
+  position: relative;
+  padding-bottom: 0;
+}
+h5{
+  text-align:center;
+}
+.scrollFT{
+  margin-top: 15%;
+}
+.mainList{
+  text-align: center;
+}
+.posList{
+  display:inline-block;
+  text-align: left;
+  padding: 3em;
+}
+li{
+  padding-top: 1em;
+  padding-bottom: 1em;
 }

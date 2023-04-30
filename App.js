@@ -31,11 +31,12 @@ app.use(express.static(publicPath));  //tell express to use that folder
 //here's where we specify what to send to users that connect to our web server...
 //if there's no url extension, it will show "index.html"
 router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/"));
+  res.sendFile(path.join(__dirname, "/"));
 });
-
 //depending on what url extension the user navigates to, send them the respective html file. 
-
+router.get("/electionStarter", function (req, res) {
+  res.sendFile(path.join(__dirname, "/electionStarter"));
+});
 
 //run this server by entering "node App.js" using your command line. 
    app.listen(port, () => {

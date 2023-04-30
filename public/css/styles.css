@@ -7,6 +7,12 @@ html, .main{
   overflow: auto;
   margin:0;
 }
+.navbar .navbar-light{
+  display: inline;
+  border-color: transparent;
+  background-color: transparent;
+  width:100%;
+}
 .navbar-light .navbar-toggler{
     border-color: transparent;
 }
@@ -15,6 +21,11 @@ html, .main{
 }
 .navbar-light .navbar-nav .nav-item .nav-link{
   color:#424242;
+  
+}
+.iconBtn{
+  border-color: transparent;
+  background-color: transparent;
 }
 h1{
   color:#444444;

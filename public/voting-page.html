@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <head>
-    <title>
-        Canidate voting screen
-    </title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- adds jQuery libraries -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/ea5c975e64.js" crossorigin="anonymous"></script>
+  <!--Font Awesome Icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- BootstapCSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,900;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <title>
+      Election Voting Screen
+  </title>
 </head>
     <body>
-        <h1>Voting</h1>
-        <h2>City Union Dean of Education</h2>
-        <div class="form-check">
+      <nav class="navbar-nav navbar-light sticky-top">
+        <div class="navbar">
+            <button class="iconBtn mr-auto">
+                <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
+            </button>
+            <button class="iconBtn mx-auto ">
+                <i class="fa-regular fa-circle-question fa-2xl img"></i> 
+            </button>
+            <button class="navbar-toggler ml-auto custom-toggler">
+                <span class="navbar-toggler-icon custom-toggler"></span>
+            </button>
+        </div>
+      </nav>
+
+        <h1><b>Voting</b></h1>
+        <h2 style="font-weight: 300;">City Union Dean of Education</h2>
+        <div id="vote-options" style="padding-bottom: 20%;">
+          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
+            <button class="iconBtn">
+              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
+            </button>
+            <div style="display: inline-block; vertical-align:middle; width: 80%;">
+              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 1</h5>
+              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Republican Party</p>
+            </div>
+          </div>
+          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
+            <button class="iconBtn">
+              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
+            </button>
+            <div style="display: inline-block; vertical-align:middle; width: 80%;">
+              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 2</h5>
+              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Democratic Party</p>
+            </div>
+          </div>
+          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
+            <button class="iconBtn">
+              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
+            </button>
+            <div style="display: inline-block; vertical-align:middle; width: 80%;">
+              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 3</h5>
+              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Independent</p>
+            </div>
+          </div>
+        <!-- <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <h3 class="form-check-label" for="flexRadioDefault1">
+          </div>
+          <h3 class="form-check-label" for="flexRadioDefault1">
               Canidate 1
             </h3>
             <h4>Democrat</h4>
-          </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
             <h3 class="form-check-label" for="flexRadioDefault2">
@@ -29,49 +82,19 @@
             <h3 class="form-check-label" for="flexRadioDefault2">
               Canidate 3
             </h3>
-            <h4>Independent</h4>
+            <h4>Independent</h4> -->
+        <!-- </div> -->
         </div>
         <div>
-            <button class="n">Previous</button>
-            <button>Favorite</button>
-            <button>Ballot tracker</button>
-            <button>Next</button>
-
-        </div>
+          <i class="fa-solid fa-circle-arrow-left fa-2xl img-prop"></i>
+          <i class="fa-regular fa-star fa-2xl img-prop"></i>
+          <i class="fa-solid fa-clipboard-check fa-2xl img-prop"></i>
+          <i class="fa-solid fa-circle-arrow-right fa-2xl img-prop"></i>
+      </div>
     </body>
 </html>
-<!-- add css below -->
-<style>
-  /* make it take over the whole screen */
-  body {
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  /* add some styling to the form*/
-  .form-check {
-    width: 30%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    border: 1px solid black;
-    border-radius: 10px;
-    
-  }
-  /* vertically form-check center input */
-  .form-check-input {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  /* align the h4 in form-check to the left margin of the h3 */
-  .form-check h3 {
-    text-align: left;
-    margin-bottom: 0;
-  }
-  .form-check h4 {
-    text-align: left;
-    margin-bottom: 0;
-  }
-</style>
+<script>
+  $('#vote-options div button').click(function(){
+    $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check')
+});
+</script>

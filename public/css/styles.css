@@ -1,15 +1,15 @@
-/* html{
+html{
   scroll-behavior: smooth;
-} */
+}
 
 body {
   background-color: #F5F5F5;
-  height: 100%;
   overflow: auto;
   margin:0;
   font-family: 'Albert Sans';
   text-align: center;
   font-size: large;
+  position:absolute;
 }
 
 nav {
@@ -33,6 +33,11 @@ p {
 .img-prop {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.img-cand {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .navbar .navbar-light{
@@ -71,6 +76,10 @@ h3 {
   padding-top: 10%;
   padding-right: 10%;
   padding-left: 10%;
+}
+
+subtitle {
+  padding-bottom: 5%;
 }
 
 #positionInf {
@@ -147,4 +156,13 @@ ul {
 
 li {
   padding: 5%;
+}
+
+.pull-up-sig {
+  margin: auto;
+  border-radius: 10px;
+  background: grey;
+  width: 100px;
+  height: 8px;
+  overflow-y: auto;
 }

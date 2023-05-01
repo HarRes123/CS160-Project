@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <head>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <title>
-        Candidate Page
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- adds jQuery libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/ea5c975e64.js" crossorigin="anonymous"></script>
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- BootstapCSS -->
+    <link href='https://fonts.googleapis.com/css?family=Albert Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>
+        Candidate
+    </title>
 </head>
     <body>
-        <h1>Johnny Appleseed</h1>
-        <subtitle>Local farmer planting apples</subtitle>
-        <br>
-        <br>
-        <br>
-        <button>Previous</button>
-        <button>Next</button>
-        <br>
-        <br>
+        <nav class="navbar-nav navbar-light sticky-top">
+            <!-- Navigation Bar -->
+            <div class="navbar">
+                <button class="iconBtn mr-auto">
+                    <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
+                </button>
+                <button class="iconBtn mx-auto ">
+                    <i class="fa-regular fa-circle-question fa-2xl img"></i> 
+                </button>
+                <button class="navbar-toggler ml-auto custom-toggler">
+                    <span class="navbar-toggler-icon custom-toggler"></span>
+                </button>
+            </div>
+            <h1>Johnny Appleseed</h1>
+            <subtitle>Local farmer planting apples</subtitle>
+        </nav>
+        <div style="padding-top: 10%;">
+            <i class="fa-solid fa-circle-arrow-left fa-2xl img-cand"></i>
+            <i class="fa-solid fa-circle-arrow-right fa-2xl img-cand"></i>
+        </div>
         <ul>
             <li>
-                Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut 
             </li>
             <li>
-                labore et dolore magna aliqua. Ut enim 
-                ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi 
+                sed do eiusmod tempor incididunt ut 
+                labore et dolore magna aliqua.
             </li>
             <li>
-                ut aliquip ex ea commodo consequat. Duis 
-                aute irure dolor in reprehenderit
-            </li>
-            <li>
-                in voluptate velit esse cillum dolore eu 
-                fugiat nulla pariatur. Excepteur sint occaecat 
-                cupidatat non proident, sunt in culpa qui officia
-            </li>
-            <li>
-                deserunt mollit anim id est laborum
+                Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi
             </li>
         </ul>
-
-        <br>
-
         <div class="card">
-            <div>
-                <div class="card-content">
+            <div style="padding: 5%;">
+                <div class="pull-up-sig"></div>
+                <div class="card-content" style="padding-top: 10%; padding-left: 5%; padding-right: 5%;">
+                    <h4>Biography</h4>
+                    <br>
                     "Sed ut perspiciatis unde omnis iste natus 
                     error sit voluptatem accusantium doloremque 
                     laudantium, totam rem aperiam, eaque ipsa quae 

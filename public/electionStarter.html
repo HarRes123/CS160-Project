@@ -1,112 +1,72 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- adds jQuery libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/ea5c975e64.js" crossorigin="anonymous"></script>
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- BootstapCSS -->
+    <link href='https://fonts.googleapis.com/css?family=Albert Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <title>
         Election Race Starter Screen
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- adds jQuery libraries -->
-    <script src=
-    "https://code.jquery.com/jquery-3.2.1.slim.min.js">
-      </script>
-        <script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
-      </script>
-        <script src=
-    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
-      </script>
-      <script src="https://kit.fontawesome.com/ea5c975e64.js" crossorigin="anonymous"></script>
-      <!--Font Awesome Icons-->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-      <!-- BootstapCSS -->
-    <link rel="stylesheet"
-    href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
     <body class="main">
-        <section class="next">
-        <nav class="navbar-nav navbar-light ">
-            <!-- UL List for the icons in the navbar-->
+        <nav class="navbar-nav navbar-light sticky-top">
             <div class="navbar">
-        
                 <button class="iconBtn mr-auto">
-                    <i class="fa-solid fa-arrow-left fa-xl" style="color: #424242;"></i> 
+                    <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
                 </button>
-            
-            
                 <button class="iconBtn mx-auto ">
-                    <i class="fa-regular fa-circle-question fa-xl" style="color: #424242;"></i> 
+                    <i class="fa-regular fa-circle-question fa-2xl img"></i> 
                 </button>
-            
-            
-                <button class="navbar-toggler ml-auto custom-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#nav1">
-                    <span class="navbar-toggler-icon custom-toggler">
-                    </span>
+                <button class="navbar-toggler ml-auto custom-toggler">
+                    <span class="navbar-toggler-icon custom-toggler"></span>
                 </button>
-                <div class="navbar-collapse collapse text-right" id="nav1">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="#">Voter Guide</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="#">Ballot Tracker</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="#">Account</a>
-                        </li>
-                    </ul>
-                </div>
-                    
-        
             </div>
-            
-        </div>
-            
-
         </nav>
         
 
-        <h1> City Elections </h1>
-        <h3>City Union Dean <br> Of Education</h3>
+        <h1><b> City Elections </b></h1>
+        <h2>City Union Dean of Education</h2>
+        <div>
+            <i class="fa-solid fa-circle-arrow-left fa-2xl img"></i>
+            <i class="fa-solid fa-circle-arrow-right fa-2xl img"></i>
+        </div>
         <div class="d-grid gap-2 text-center">
-            <button class="btn btn-primary btn-vote" type="button">Vote</button>
-            <button class="btn btn-primary btn-cand" type="button">Meet The Candidates</button>
+            <button class="btn btn-primary btn-vote">Vote</button>
+            <button class="btn btn-primary btn-cand">Meet The Candidates</button>
         </div>
-        <div class="scrollFT">
-            <p id="moreInf">More Info</p>
-            <a class="downArrow" href="#positionInf"> <i class="fa-solid fa-arrow-down-long fa-2xl" style="color: #424242;"></i> </a>
-        </div>
-            
+        <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        </p>
+        <i class="fa-solid fa-arrow-down-long fa-2xl fa-bounce img" style="padding-top: 5%;"></i>
         
-        </section>
 
         <section id="positionInf">
-            <h5>This Position Deals With...</h5>
-            <div class="mainList">
+            <h5><i>This position deals with:</i></h5>
+            <div>
                 <ul class="posList">
-                    <li>THING 1</li>
-                    <li>THING 2</li>
-                    <li>THING 3</li>
-    
+                    <li>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. 
+                    </li>
+                    <li>
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                        ut aliquip ex ea commodo consequat.
+                    </li>
+                    <li>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                        dolore eu fugiat nulla pariatur.
+                    </li>
                 </ul>
             </div>
-            
         </section>
-        
-        
-
     </body>
-    <script>
-        $(function() {
-            $('document').ready(function(){ $(window).scrollTop(0); });
-        });
-    </script>
-
 </html>

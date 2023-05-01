@@ -30,6 +30,11 @@ p {
   padding-bottom: 20%;
 }
 
+.img-prop {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .navbar .navbar-light{
   display: inline;
   border-color: transparent;
@@ -51,12 +56,21 @@ p {
 }
 h1{
   text-align: center;
-  margin-top: 10%;
+  margin-top: 12%;
 }
+
 h2{
   text-align: center;
-  margin-top: 12.88%;
+  margin-top: 15%;
   margin-bottom: 15%;
+}
+
+h3 {
+  text-align: justify;
+  font-size: x-large;
+  padding-top: 10%;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
 #positionInf {
@@ -104,21 +118,31 @@ section {
   position: relative;
   padding-bottom: 0;
 }
+
 h5{
   text-align: left;
   padding-left: 15%;
+  font-size: x-large;
 }
 
 .scrollFT{
   margin-top: 15%;
 }
 
-.posList{
+ul {
   text-align: left;
   padding-right: 20%;
   padding-left: 20%;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
   padding-top: 10%;
+}
+
+.cards {
+  padding: 5%;
+}
+
+.card {
+  border-radius: 25px;
 }
 
 li {

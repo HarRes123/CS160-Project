@@ -38,6 +38,12 @@ h3{
   margin-top: 12.88%;
   margin-bottom: 15%;
 }
+.dropdown-divider{
+  border-top: 1px solid #4F4F4F;
+}
+.mvPgBtn{
+  padding-top: 5%;
+}
 
 .btn-vote{
   background-color: #C8C7C7;
@@ -80,14 +86,14 @@ section {
   position: relative;
   padding-bottom: 0;
 }
-h5{
+h4{
   text-align:center;
 }
 .scrollFT{
   margin-top: 15%;
 }
 .mainList{
-  text-align: center;
+  margin: auto;
 }
 .posList{
   display:inline-block;
@@ -97,4 +103,5 @@ h5{
 li{
   padding-top: 1em;
   padding-bottom: 1em;
+  font-size: 18px;
 }

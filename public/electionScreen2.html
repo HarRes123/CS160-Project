@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Election Race Screen 2
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- adds jQuery libraries -->
+    <script src=
+    "https://code.jquery.com/jquery-3.2.1.slim.min.js">
+      </script>
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+      </script>
+        <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+      </script>
+      <script src="https://kit.fontawesome.com/ea5c975e64.js" crossorigin="anonymous"></script>
+      <!--Font Awesome Icons-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <!-- BootstapCSS -->
+    <link rel="stylesheet"
+    href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/election-starter.css">
+</head>
+    <body class="main">
+        <section class="next">
+        <nav class="navbar-nav navbar-light ">
+            <!-- UL List for the icons in the navbar-->
+            <div class="navbar">
+        
+                <button class="iconBtn mr-auto">
+                    <i class="fa-solid fa-arrow-left fa-xl" style="color: #424242;"></i> 
+                </button>
+            
+            
+                <button class="iconBtn mx-auto ">
+                    <i class="fa-regular fa-circle-question fa-xl" style="color: #424242;"></i> 
+                </button>
+            
+            
+                <button class="navbar-toggler ml-auto custom-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#nav1">
+                    <span class="navbar-toggler-icon custom-toggler">
+                    </span>
+                </button>
+                <div class="navbar-collapse collapse text-right" id="nav1">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#">Voter Guide</a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#">Ballot Tracker</a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#">Account</a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                    </ul>
+                </div>
+              
+            </div>
+            
+        </div>
+            
+        </nav>
+    
+        <h1> City Elections </h1>
+        <h3> Lieutenant Governor</h3>
+        <div class="d-grid gap-2 text-center">
+            <button class="btn btn-primary btn-vote" type="button">Vote</button>
+            <button class="btn btn-primary btn-cand" type="button">Meet The Candidates</button>
+        </div>
+
+        <div class="d-grid gap-2 text-center mvPgBtn">
+            <button class="btn prevBtn" type="button"> <i class="fa-regular fa-circle-left fa-2xl" style="color: #636363;"></i> </button>
+            <button class="btn nextBtn" type="button"> <i class="fa-regular fa-circle-left fa-rotate-180 fa-2xl" style="color: #636363;"></i> </button>
+        </div>
+
+        <div class="scrollFT">
+            <p id="moreInf">More Info</p>
+            <a class="downArrow" href="#positionInf"> <i class="fa-solid fa-arrow-down-long fa-2xl" style="color: #424242;"></i> </a>
+        </div>
+            
+        
+        </section>
+
+        <section id="positionInf">
+            <h4>This Position Deals With...</h4>
+            <div class="mainList">
+                <ul class="posList">
+                    <li>Acting Governor if Governor is Absent From State</li>
+                    <li>Becomes Governor if Vacancy Occurs in Office of Governor</li>
+                    <li>Voting Member of the Board of Regents of the University of California</li>
+                    <li>Voting Member of the Board of Trustees of the California State University system</li>
+                    <li>Chairs the California Commission for Economic Development</li>
+                    <li>Sits on the Calbright College Board of Trustees</li>
+    
+                </ul>
+            </div>
+            
+        </section>
+        
+        
+
+    </body>
+    <script>
+        $(function() {
+            $('document').ready(function(){ $(window).scrollTop(0); });
+        });
+    </script>
+
+</html>

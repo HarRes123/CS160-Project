@@ -221,3 +221,7 @@ input[type='checkbox']:checked + .card-container .card-flip {
 .card-block {
   padding: 5%;
 }
+
+hr {
+  width: 80%;
+}

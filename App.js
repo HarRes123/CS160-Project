@@ -38,7 +38,7 @@ app.get('/guide', function (req, res) {
   res.sendFile(publicPath + '/guide.html');
 });
 app.get("/ballot-tracker", function (req, res) {
-  res.sendFile(path.join(publicPath + "/ballot-tracker.html"));
+  res.sendFile(publicPath + "/ballot-tracker.html");
 });
 app.get('/voting-page', function (req, res) {
   res.sendFile(publicPath + '/voting-page.html');
@@ -46,16 +46,16 @@ app.get('/voting-page', function (req, res) {
 
 //depending on what url extension the user navigates to, send them the respective html file. 
 app.get("/proposition", function (req, res) {
-  res.sendFile(path.join(publicPath + "/proposition.html"));
+  res.sendFile(publicPath + "/proposition.html");
 });
 
 app.get("/candidate", function (req, res) {
-  res.sendFile(path.join(publicPath + "/candidate-info.html"));
+  res.sendFile(publicPath + "/candidate-info.html");
 });
   
 //depending on what url extension the user navigates to, send them the respective html file. 
 router.get("/electionStarter", function (req, res) {
-  res.sendFile(path.join(__dirname, "/electionStarter.html"));
+  res.sendFile(publicPath, "/electionStarter.html");
 });
 
 //run this server by entering "node App.js" using your command line. 

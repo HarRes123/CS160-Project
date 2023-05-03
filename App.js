@@ -34,9 +34,6 @@ router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/"));
 });
 
-app.get('/guide', function (req, res) {
-  res.sendFile(publicPath + '/guide.html');
-});
 app.get("/ballot-tracker", function (req, res) {
   res.sendFile(publicPath + "/ballot-tracker.html");
 });

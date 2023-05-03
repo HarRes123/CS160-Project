@@ -32,14 +32,17 @@
         <!-- Navigation Bar -->
         <div class="navbar d-flex justify-content-between">
             <button class="iconBtn">
-                <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
+                <i id="backButton" class="fa-solid fa-arrow-left fa-xl img" href="/electionStarter?election=sf-board-of-education"></i>
             </button>
-            <button class="iconBtn center-iconBtn">
-                <i class="fa-regular fa-circle-question fa-xl img"></i>
+            <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              <i class="fa-regular fa-circle-question fa-xl img"></i>
             </button>
             <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
         <script>
+            $(document).ready(function(){
+                $('[data-toggle="popover"]').popover();
+            });
             function openNav() {
                 document.getElementById("mySidepanel").style.width = "250px";
             }
@@ -62,10 +65,10 @@
         
         <div style="padding-top: 10%;">
             <button class="iconBtn mx-auto img-cand">
-                <i class="fa-solid fa-circle-arrow-left fa-xl"></i>
+                <i id="previous-cadidate" class="fa-solid fa-circle-arrow-left fa-xl"></i>
             </button>
             <button class="iconBtn mx-auto img-cand">
-                <i class="fa-solid fa-circle-arrow-right fa-xl"></i>
+                <i id="next-cadidate" class="fa-solid fa-circle-arrow-right fa-xl"></i>
             </button>
         </div>
         <ul id="candidate-bullet-points">
@@ -179,35 +182,44 @@ const allCandidates = {
 ]
 }
 
-function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+const urlParams = new URLSearchParams(window.location.search);
+  let election = urlParams.get('election');
+  let number = parseInt(urlParams.get('number'));
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const election = urlParams.get('election');
-    const number = parseInt(urlParams.get('number'));
-
-    console.log("election", election)
-    console.log("number", number)
-
-    const selectedCandidate = allCandidates[election][number]
-    // const selectedCandidate = allCandidates["state-assembly"][0]
-
+  function updateCandidate() {
+    const selectedCandidate = allCandidates[election][number];
     document.getElementById("candidate-name").innerText = selectedCandidate.name;
-        document.getElementById("candidate-title").innerText = selectedCandidate.title;
+    document.getElementById("candidate-title").innerText = selectedCandidate.title;
+    document.getElementById("backButton").href = `/electionStarter?election=${election}`;
 
-        let bulletPoints = "";
-        for (let point of selectedCandidate.bulletPoints) {
-            bulletPoints += `<li>${point}</li>`;
-        }
-        document.getElementById("candidate-bullet-points").innerHTML = bulletPoints;
+    let bulletPoints = "";
+    for (let point of selectedCandidate.bulletPoints) {
+      bulletPoints += `<li>${point}</li>`;
+    }
+    document.getElementById("candidate-bullet-points").innerHTML = bulletPoints;
 
-        document.getElementById("candidate-biography").innerText = selectedCandidate.biography;
+    document.getElementById("candidate-biography").innerText = selectedCandidate.biography;
+  }
+
+  function updateCandidateIndex(delta) {
+    number += delta;
+    if (number < 0) {
+      number = allCandidates[election].length - 1;
+    } else if (number >= allCandidates[election].length) {
+      number = 0;
+    }
+    updateCandidate();
+    history.pushState({}, '', `?election=${election}&number=${number}`);
+  }
+
+  document.getElementById('previous-cadidate').addEventListener('click', () => {
+    updateCandidateIndex(-1);
+  });
+  document.getElementById('next-cadidate').addEventListener('click', () => {
+    updateCandidateIndex(1);
+  });
+
+  updateCandidate();
+
     
 </script>

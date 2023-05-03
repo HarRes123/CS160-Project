@@ -27,12 +27,15 @@
                 <button class="iconBtn">
                     <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
                 </button>
-                <button class="iconBtn center-iconBtn">
+                <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                     <i class="fa-regular fa-circle-question fa-xl img"></i>
                 </button>
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
             </div>
             <script>
+                $(document).ready(function(){
+                    $('[data-toggle="popover"]').popover();
+                });
                 function openNav() {
                     document.getElementById("mySidepanel").style.width = "250px";
                 }

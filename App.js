@@ -54,7 +54,7 @@ app.get("/candidate", function (req, res) {
 });
   
 //depending on what url extension the user navigates to, send them the respective html file. 
-router.get("/electionStarter", function (req, res) {
+app.get("/electionStarter", function (req, res) {
   res.sendFile(publicPath, "/electionStarter.html");
 });
 

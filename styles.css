@@ -6,4 +6,8 @@ body { /*default body style (black Verdana)*/
     color:#000000; 
     background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
+
+h2 {
+  margin-right: 50px;
+}
   

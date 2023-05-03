@@ -22,9 +22,11 @@
         <nav class="navbar-nav navbar-light sticky-top">
             <!-- Navigation Bar -->
             <div class="navbar d-flex justify-content-between">
-                <button class="iconBtn">
-                    <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
-                </button>
+                <a href = "/electionStarter?election=sf-board-of-education" style="color: black">
+                    <button class="iconBtn">
+                        <i class="fa-solid fa-arrow-left fa-xl img"></i>
+                    </button>
+                </a>
                 <button class="iconBtn center-iconBtn">
                     <i class="fa-regular fa-circle-question fa-xl img"></i>
                 </button>
@@ -72,12 +74,15 @@
         </div>
         <div>
             <nav class="navbar fixed-bottom navbar-light bg-light">
-            <i class="fa-solid fa-circle-arrow-left fa-xl img-prop"></i>
+            <a id="previous-button" style="color: black"><i class="fa-solid fa-circle-arrow-left fa-xl img-prop"></i></a>
+            
             <button class="iconBtn" id="star">
                 <i class="fa-regular fa-star fa-xl img-prop"></i>
             </button>
-            <i class="fa-solid fa-clipboard-check fa-xl img-prop"></i>
-            <i class="fa-solid fa-circle-arrow-right fa-xl img-prop"></i>
+            <a id="ballot-button" href="/ballot-tracker" style="color: black"><i class="fa-solid fa-clipboard-check fa-xl img-prop"></i></a>
+            
+            <a id="next-button" style="color: black"><i class="fa-solid fa-circle-arrow-right fa-xl img-prop"></i></a>
+            
         </nav>
       </div>
     </body>
@@ -121,6 +126,7 @@ function getParameterByName(name, url) {
     ];
 } else if (election == "sf-board-of-education") {
     electionTitle = "San Francisco 2020 Board of Education Election";
+    next = "sf-board-of-supervisors";
     candidates = [
         {
             name: "Jenny Lam",
@@ -141,6 +147,7 @@ function getParameterByName(name, url) {
     ];
 } else if (election == "sf-board-of-supervisors") {
     electionTitle = "San Francisco 2020 Board of Supervisors District 3 Election";
+    next="sf-board-of-education";
     candidates = [
         {
             name: "Aaron Peskin",
@@ -161,9 +168,12 @@ function getParameterByName(name, url) {
     const container = document.getElementById("candidates-container");
     container.innerHTML = `
         <h1><b>Voting</b></h1>
-        <h2 style="font-weight: 300;" id="election-name">${electionTitle}</h2>
+        <h2 style="font-weight: 300; margin-right: 10px; margin-left: 10px;" id="election-name">${electionTitle}</h2>
         <div id="vote-options" style="padding-bottom: 20%;"></div>
     `;
+
+    document.getElementById("next-button").href = `/voting-page?election=${next}`
+    document.getElementById("previous-button").href = `/voting-page?election=${next}`
 
     const voteOptions = document.getElementById("vote-options");
 

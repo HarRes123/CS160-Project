@@ -24,10 +24,12 @@
         <nav class="navbar-nav navbar-light sticky-top">
             <!-- Navigation Bar -->
             <div class="navbar d-flex justify-content-between">
-                <button class="iconBtn">
-                    <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
-                </button>
-                <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                <a href = "/" style="color:black">
+                    <button class="iconBtn">
+                        <i class="fa-solid fa-arrow-left fa-xl img"></i>
+                    </button>
+                </a>
+                <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You pressed the help button!">
                     <i class="fa-regular fa-circle-question fa-xl img"></i>
                 </button>
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
@@ -69,7 +71,10 @@
         <div>
             <nav class="navbar fixed-bottom navbar-light bg-light">
                 <button class="iconBtn mr-auto img-prop">
-                    <i class="fa-solid fa-circle-arrow-left fa-xl"></i>
+                    <a id="previous-button" style="color:black">
+                        <i class="fa-solid fa-circle-arrow-left fa-xl"></i>
+                    </a>
+                    
                 </button>
                 <button class="iconBtn mr-auto img-prop" id="up">
                     <i class="fa-regular fa-thumbs-up fa-xl"></i>
@@ -78,7 +83,9 @@
                     <i class="fa-regular fa-thumbs-down fa-xl"></i>
                 </button>
                 <button class="iconBtn mr-auto img-prop">
-                    <i class="fa-solid fa-circle-arrow-right fa-xl"></i>
+                    <a id="next-button" style="color:black">
+                        <i class="fa-solid fa-circle-arrow-right fa-xl"></i>
+                    </a>
                 </button>
             </nav>
         </div>
@@ -158,6 +165,8 @@
 
         document.getElementById("no-detail-1").innerHTML = "You oppose reinstating affirmative action in California, maintaining the current ban on considering race, sex, ethnicity, and national origin in public institutions' admissions, hiring, and contracting decisions.";
         document.getElementById("no-detail-2").innerHTML = "You believe that affirmative action may lead to reverse discrimination and that decisions should be based on merit alone.";
+        document.getElementById("next-button").href = "/proposition?prop=17"
+        document.getElementById("previous-button").href = "/proposition?prop=17"
     }
 
     if (prop=="17") {
@@ -170,5 +179,8 @@
 
         document.getElementById("no-detail-1").innerHTML = "You oppose granting voting rights to individuals on parole for felony convictions in California.";
         document.getElementById("no-detail-2").innerHTML = "You believe that voting rights should only be restored after the completion of parole as a part of the consequences for committing a felony.";
+
+        document.getElementById("next-button").href = "/proposition?prop=16"
+        document.getElementById("previous-button").href = "/proposition?prop=16"
     }
 </script>

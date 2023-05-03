@@ -22,15 +22,17 @@
         <!-- Navigation Bar -->
         <div class="navbar d-flex justify-content-between">
             <button class="iconBtn">
-                <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
+                <a href="/" style = "color: black">
+                    <i class="fa-solid fa-arrow-left fa-xl img"></i>
+                </a>
             </button>
-            <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            <button class="iconBtn center-iconBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You pressed the help button!">
               <i class="fa-regular fa-circle-question fa-xl img"></i>
-          </button>
+            </button>
             <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
         <script>
-            $(document).ready(function(){
+            $(document).ready(function() {
                 $('[data-toggle="popover"]').popover();
             });
             function openNav() {
@@ -49,17 +51,23 @@
     </nav>
   
     <h1><b>City Elections</b></h1>
-    <h2 id="election-title">City Union Dean of Education</h2>
+    <h2 style="margin-right: 10px; margin-left: 10px;" id="election-title">City Union Dean of Education</h2>
     <div style="padding-bottom: 5%; margin-right:5%;">
+      <a id="previous-button" href= "/" style = "color: black">
+        <button class="iconBtn mr-auto">
+          <i class="fa-solid fa-circle-arrow-left fa-xl img"></i>
+        </button>
+      </a>
       <button class="iconBtn mr-auto" onclick="history.back()">
-        <i class="fa-solid fa-circle-arrow-left fa-xl img"></i>
-      </button>
-      <button class="iconBtn mr-auto" onclick="history.back()">
-        <i class="fa-solid fa-circle-arrow-right fa-xl img"></i>
+        <a id="next-button" style = "color: black">
+            <i class="fa-solid fa-circle-arrow-right fa-xl img"></i>
+        </a>
       </button>
     </div>
     <div class="d-grid gap-2 text-center" style="padding-top:5%;">
-      <button class="btn btn-primary btn-vote">Vote</button>
+        <a id="vote">
+            <button class="btn btn-primary btn-vote">Vote</button>
+        </a>
       <a id="meet-candidates" href="/candidate-info">
         <button class="btn btn-primary btn-cand">Meet The Candidates</button>
       </a>
@@ -94,6 +102,7 @@
   },
   "sf-board-of-supervisors": {
     title: "SF Board of Supervisors",
+    next: "sf-board-of-education",
     description: "The San Francisco Board of Supervisors is the legislative body within the city and county of San Francisco.",
     positionDetails: [
       "The Board of Supervisors is responsible for creating and amending local laws and setting policies for the city.",
@@ -102,6 +111,7 @@
   },
   "sf-board-of-education": {
     title: "SF Board of Education",
+    next: "sf-board-of-supervisors",
     description: "The San Francisco Board of Education is responsible for governing the San Francisco Unified School District.",
     positionDetails: [
       "The Board of Education is responsible for establishing educational goals and standards.",
@@ -115,7 +125,9 @@ function updateElectionInfo(electionKey) {
   document.getElementById("election-title").innerHTML = election.title;
   document.getElementById("election-description").innerHTML = election.description;
   document.getElementById("meet-candidates").href = `/candidate?election=${electionKey}&number=${0}`;
-  console.log(typeof(elections))
+  document.getElementById("vote").href = `/voting-page?election=${electionKey}`;
+  document.getElementById("next-button").href = `/electionStarter?election=${election.next}`
+  document.getElementById("previous-button").href = `/electionStarter?election=${election.next}`
   
 
   const positionDetailsList = document.getElementById("position-details");

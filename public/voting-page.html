@@ -17,21 +17,39 @@
   <title>
       Election Voting Screen
   </title>
+  <style>
+        .center-iconBtn {
+            margin-right: 45%;
+        }
+    </style>
 </head>
     <body>
-      <nav class="navbar-nav navbar-light sticky-top">
-        <div class="navbar">
-            <button class="iconBtn mr-auto" onclick="history.back()">
-                <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
-            </button>
-            <button class="iconBtn mx-auto ">
-                <i class="fa-regular fa-circle-question fa-2xl img"></i> 
-            </button>
-            <button class="navbar-toggler ml-auto custom-toggler">
-                <span class="navbar-toggler-icon custom-toggler"></span>
-            </button>
-        </div>
-      </nav>
+        <nav class="navbar-nav navbar-light sticky-top">
+            <!-- Navigation Bar -->
+            <div class="navbar d-flex justify-content-between">
+                <button class="iconBtn">
+                    <i class="fa-solid fa-arrow-left fa-2xl img" onclick="history.back()"></i>
+                </button>
+                <button class="iconBtn center-iconBtn">
+                    <i class="fa-regular fa-circle-question fa-2xl img"></i>
+                </button>
+                <button class="openbtn" onclick="openNav()">&#9776;</button>
+            </div>
+            <script>
+                function openNav() {
+                    document.getElementById("mySidepanel").style.width = "250px";
+                }
+                function closeNav() {
+                    document.getElementById("mySidepanel").style.width = "0";
+                }
+            </script>
+    
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="/guide">Voting Guide</a>
+                <a href="/ballot-tracker">Ballot Tracker</a>
+            </div>
+        </nav>
 
       <div id="candidates-container">
       </div>

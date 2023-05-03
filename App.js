@@ -55,7 +55,7 @@ app.get("/candidate", function (req, res) {
   
 //depending on what url extension the user navigates to, send them the respective html file. 
 app.get("/electionStarter", function (req, res) {
-  res.sendFile(publicPath, "/electionStarter.html");
+  res.sendFile(publicPath + "/electionStarter.html");
 });
 
 //run this server by entering "node App.js" using your command line. 

@@ -17,21 +17,16 @@
   <title>
       Election Voting Screen
   </title>
-  <style>
-        .center-iconBtn {
-            margin-right: 45%;
-        }
-    </style>
 </head>
     <body>
         <nav class="navbar-nav navbar-light sticky-top">
             <!-- Navigation Bar -->
             <div class="navbar d-flex justify-content-between">
                 <button class="iconBtn">
-                    <i class="fa-solid fa-arrow-left fa-2xl img" onclick="history.back()"></i>
+                    <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
                 </button>
                 <button class="iconBtn center-iconBtn">
-                    <i class="fa-regular fa-circle-question fa-2xl img"></i>
+                    <i class="fa-regular fa-circle-question fa-xl img"></i>
                 </button>
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
             </div>
@@ -76,12 +71,14 @@
         <!-- </div> -->
         </div>
         <div>
-          <i class="fa-solid fa-circle-arrow-left fa-2xl img-prop"></i>
-          <button class="iconBtn" id="star">
-              <i class="fa-regular fa-star fa-2xl img-prop"></i>
-          </button>
-          <i class="fa-solid fa-clipboard-check fa-2xl img-prop"></i>
-          <i class="fa-solid fa-circle-arrow-right fa-2xl img-prop"></i>
+            <nav class="navbar fixed-bottom navbar-light bg-light">
+            <i class="fa-solid fa-circle-arrow-left fa-xl img-prop"></i>
+            <button class="iconBtn" id="star">
+                <i class="fa-regular fa-star fa-xl img-prop"></i>
+            </button>
+            <i class="fa-solid fa-clipboard-check fa-xl img-prop"></i>
+            <i class="fa-solid fa-circle-arrow-right fa-xl img-prop"></i>
+        </nav>
       </div>
     </body>
 </html>
@@ -176,7 +173,7 @@ function getParameterByName(name, url) {
 
         candidateDiv.innerHTML = `
             <button class="iconBtn">
-                <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
+                <i class="fa-regular fa-circle fa-xl" style="display: inline-block;"></i>
             </button>
             <div style="display: inline-block; vertical-align:middle; width: 80%;">
                 <h5 style="padding-left: 5%; font-weight: 600;">${candidate.name}</h5>

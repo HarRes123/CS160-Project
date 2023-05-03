@@ -57,8 +57,10 @@ body {
   background-color: transparent;
   color: black;
   border: none;
-  position: absolute;
+  position: relative;
   right: 0;
+  top: 8%;
+  transform: translateY(-8%);
 }
 
 .openbtn:hover {

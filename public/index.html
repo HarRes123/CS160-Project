@@ -19,21 +19,29 @@
   </title>
 </head>
     <body>
-        <button class="openbtn" onclick="openNav()">&#9776;</button> 
-        <script>
-          function openNav() {
-            document.getElementById("mySidepanel").style.width = "250px";
-          }
-          function closeNav() {
-            document.getElementById("mySidepanel").style.width = "0";
-          }
-        </script>
-
+      <nav class="navbar-nav navbar-light sticky-top">
+        <!-- Navigation Bar -->
+        <div class="navbar d-flex justify-content-right">
+          <div class="ml-auto">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <script>
+              function openNav() {
+                document.getElementById("mySidepanel").style.width = "250px";
+              }
+              function closeNav() {
+                document.getElementById("mySidepanel").style.width = "0";
+              }
+            </script>
+          </div>
           <div id="mySidepanel" class="sidepanel">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="/">Voting Guide</a>
             <a href="/ballot-tracker">Ballot Tracker</a>
           </div>
+        </div>
+      </nav>
+      
+      
           
         <h1 style="font-weight: 800;">Voting Guide</h1>
         <h3 style="padding-top: 5%; font-weight: 300;"><i>Click on a card to access specific races.</i></h3>
@@ -78,9 +86,9 @@
         <!-- Card 1 Back -->
         <div class="card back shadow-sm">
           <div class="card-block">
-            <a href="/voting-page?election=state-assembly" class="btn btn-primary">State Assembly</a>
-            <a href="/voting-page?election=sf-board-of-education" class="btn btn-primary">Board of Education</a>
-            <a href="/voting-page?election=sf-board-of-supervisors" class="btn btn-primary">Board of Supervisors</a>
+            <!-- <a href="/electionStarter?election=state-assembly" class="btn btn-primary">State Assembly</a> -->
+            <a href="/electionStarter?election=sf-board-of-education" class="btn btn-primary">Board of Education</a>
+            <a href="/electionStarter?election=sf-board-of-supervisors" class="btn btn-primary">Board of Supervisors</a>
           </div>
         </div>
         <!-- End Card 1 Back -->

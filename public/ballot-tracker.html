@@ -20,53 +20,53 @@
     </title>
   </head>
   <body>
-    <button class="openbtn" onclick="openNav()">&#9776;</button> 
-        <script>
-          function openNav() {
-            document.getElementById("mySidepanel").style.width = "250px";
-          }
-          function closeNav() {
-            document.getElementById("mySidepanel").style.width = "0";
-          }
-        </script>
 
-        <script>
-          // Select all the buttons with the class "iconBtn"
-          const buttons = document.querySelectorAll('.iconBtn');
+    <nav class="navbar-nav navbar-light sticky-top">
+      <!-- Navigation Bar -->
+      <div class="navbar d-flex justify-content-right">
+        <div class="ml-auto">
+          <button class="openbtn" onclick="openNav()">&#9776;</button>
+          <script>
+            function openNav() {
+              document.getElementById("mySidepanel").style.width = "250px";
+            }
+            function closeNav() {
+              document.getElementById("mySidepanel").style.width = "0";
+            }
+          </script>
+        </div>
+        <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="/">Voting Guide</a>
+          <a href="/ballot-tracker">Ballot Tracker</a>
+        </div>
+      </div>
+    </nav>
 
-          // Add a click event listener to each button
-          buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-              // Toggle the visibility of the next sibling element
-              const nextSibling = button.nextElementSibling;
-              nextSibling.style.display = nextSibling.style.display === 'none' ? 'flex' : 'none';
-              
-              // Toggle the chevron icon
-              const icon = button.querySelector('i');
-              icon.classList.toggle('fa-flip-vertical');
-              icon.classList.toggle('fa-chevron-right');
-              icon.classList.toggle('fa-chevron-up');
-            });
-          });
+    <script>
+      // Select all the buttons with the class "iconBtn"
+      const buttons = document.querySelectorAll('.iconBtn');
 
-
-
+      // Add a click event listener to each button
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          // Toggle the visibility of the next sibling element
+          const nextSibling = button.nextElementSibling;
+          nextSibling.style.display = nextSibling.style.display === 'none' ? 'flex' : 'none';
           
-        </script>
+          // Toggle the chevron icon
+          const icon = button.querySelector('i');
+          icon.classList.toggle('fa-flip-vertical');
+          icon.classList.toggle('fa-chevron-right');
+          icon.classList.toggle('fa-chevron-up');
+        });
+      });
 
-        <style>
-          .dropdown-content {
-            display: none;
-          }
-        </style>
 
 
-
-          <div id="mySidepanel" class="sidepanel">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="/">Voting Guide</a>
-            <a href="/ballot-tracker">Ballot Tracker</a>
-          </div>
+      
+    </script>
+        
     <h1 style="font-weight: 900;">Ballot Tracker</h1>
     <hr>
     <!-- Race 1 -->

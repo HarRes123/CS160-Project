@@ -15,82 +15,126 @@
     <title>
         Election Race Starter Screen
     </title>
-    <style>
-        .center-iconBtn {
-            margin-right: 45%;
-        }
-    </style>
+
 </head>
-    <body class="main">
-        <nav class="navbar-nav navbar-light sticky-top">
-            <!-- Navigation Bar -->
-            <div class="navbar d-flex justify-content-between">
-                <button class="iconBtn">
-                    <i class="fa-solid fa-arrow-left fa-2xl img" onclick="history.back()"></i>
-                </button>
-                <button class="iconBtn center-iconBtn">
-                    <i class="fa-regular fa-circle-question fa-2xl img"></i>
-                </button>
-                <button class="openbtn" onclick="openNav()">&#9776;</button>
-            </div>
-            <script>
-                function openNav() {
-                    document.getElementById("mySidepanel").style.width = "250px";
-                }
-                function closeNav() {
-                    document.getElementById("mySidepanel").style.width = "0";
-                }
-            </script>
-    
-            <div id="mySidepanel" class="sidepanel">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="/">Voting Guide</a>
-                <a href="/ballot-tracker">Ballot Tracker</a>
-            </div>
-        </nav>
-        
-
-        <h1><b> City Elections </b></h1>
-        <h2>City Union Dean of Education</h2>
-        <div style="padding-bottom: 5%; margin-right:5%;">
-            <button class="iconBtn mr-auto" onclick="history.back()">
-                <i class="fa-solid fa-circle-arrow-left fa-2xl img"></i>
+<body class="main">
+    <nav class="navbar-nav navbar-light sticky-top">
+        <!-- Navigation Bar -->
+        <div class="navbar d-flex justify-content-between">
+            <button class="iconBtn">
+                <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
             </button>
-            <button class="iconBtn mr-auto" onclick="history.back()">
-                <i class="fa-solid fa-circle-arrow-right fa-2xl img"></i>
+            <button class="iconBtn center-iconBtn">
+                <i class="fa-regular fa-circle-question fa-xl img"></i>
             </button>
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
-        <div class="d-grid gap-2 text-center" style="padding-top:5%;">
-            <button class="btn btn-primary btn-vote">Vote</button>
-            <button class="btn btn-primary btn-cand">Meet The Candidates</button>
-        </div>
-        <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </p>
-        <button class="iconBtn mr-auto" style="padding-top: 5%; padding-bottom: 10%;">
-            <i class="fa-solid fa-arrow-down-long fa-2xl fa-bounce img"></i>
-        </button>
-        
+        <script>
+            function openNav() {
+                document.getElementById("mySidepanel").style.width = "250px";
+            }
+            function closeNav() {
+                document.getElementById("mySidepanel").style.width = "0";
+            }
+        </script>
 
-        <section id="positionInf">
-            <h5><i>This position deals with:</i></h5>
-            <div>
-                <ul class="posList">
-                    <li>
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                         tempor incididunt ut labore et dolore magna aliqua. 
-                    </li>
-                    <li>
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-                        ut aliquip ex ea commodo consequat.
-                    </li>
-                    <li>
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                        dolore eu fugiat nulla pariatur.
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </body>
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/">Voting Guide</a>
+            <a href="/ballot-tracker">Ballot Tracker</a>
+        </div>
+    </nav>
+  
+    <h1><b>City Elections</b></h1>
+    <h2 id="election-title">City Union Dean of Education</h2>
+    <div style="padding-bottom: 5%; margin-right:5%;">
+      <button class="iconBtn mr-auto" onclick="history.back()">
+        <i class="fa-solid fa-circle-arrow-left fa-xl img"></i>
+      </button>
+      <button class="iconBtn mr-auto" onclick="history.back()">
+        <i class="fa-solid fa-circle-arrow-right fa-xl img"></i>
+      </button>
+    </div>
+    <div class="d-grid gap-2 text-center" style="padding-top:5%;">
+      <button class="btn btn-primary btn-vote">Vote</button>
+      <a id="meet-candidates" href="/candidate-info">
+        <button class="btn btn-primary btn-cand">Meet The Candidates</button>
+      </a>
+      
+    </div>
+    <p id="election-description">
+      Election description goes here.
+    </p>
+    <button class="iconBtn mr-auto" style="padding-top: 5%; padding-bottom: 10%;">
+      <i class="fa-solid fa-arrow-down-long fa-xl fa-bounce img"></i>
+    </button>
+  
+    <section id="positionInf">
+      <h5><i>This position deals with:</i></h5>
+      <div>
+        <ul id="position-details" class="posList">
+        </ul>
+      </div>
+    </section>
+  </body>
 </html>
+
+<script>
+    const elections = {
+  "state-assembly": {
+    title: "California State Assembly",
+    description: "The California State Assembly is the lower house of the California State Legislature.",
+    positionDetails: [
+      "Members of the State Assembly serve two-year terms.",
+      "The Assembly has the power to pass bills that affect public policy, set state spending levels, and raise and lower taxes."
+    ]
+  },
+  "sf-board-of-supervisors": {
+    title: "SF Board of Supervisors",
+    description: "The San Francisco Board of Supervisors is the legislative body within the city and county of San Francisco.",
+    positionDetails: [
+      "The Board of Supervisors is responsible for creating and amending local laws and setting policies for the city.",
+      "Supervisors serve four-year terms and are elected by district."
+    ]
+  },
+  "sf-board-of-education": {
+    title: "SF Board of Education",
+    description: "The San Francisco Board of Education is responsible for governing the San Francisco Unified School District.",
+    positionDetails: [
+      "The Board of Education is responsible for establishing educational goals and standards.",
+      "Board members serve four-year terms and are elected citywide."
+    ]
+  }
+};
+
+function updateElectionInfo(electionKey) {
+  const election = elections[electionKey];
+  document.getElementById("election-title").innerHTML = election.title;
+  document.getElementById("election-description").innerHTML = election.description;
+  document.getElementById("meet-candidates").href = `/candidate?election=${electionKey}&number=${0}`;
+  console.log(typeof(elections))
+  
+
+  const positionDetailsList = document.getElementById("position-details");
+  positionDetailsList.innerHTML = "";
+  for (const detail of election.positionDetails) {
+    const listItem = document.createElement("li");
+    listItem.textContent = detail;
+    positionDetailsList.appendChild(listItem);
+  }
+}
+
+function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var election = getParameterByName('election');
+
+updateElectionInfo(election);
+</script>

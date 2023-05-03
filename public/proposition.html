@@ -15,11 +15,6 @@
     <title>
         Proposition
     </title>
-    <style>
-        .center-iconBtn {
-            margin-right: 45%;
-        }
-    </style>
 </head>
     <body>
 
@@ -30,10 +25,10 @@
             <!-- Navigation Bar -->
             <div class="navbar d-flex justify-content-between">
                 <button class="iconBtn">
-                    <i class="fa-solid fa-arrow-left fa-2xl img" onclick="history.back()"></i>
+                    <i class="fa-solid fa-arrow-left fa-xl img" onclick="history.back()"></i>
                 </button>
                 <button class="iconBtn center-iconBtn">
-                    <i class="fa-regular fa-circle-question fa-2xl img"></i>
+                    <i class="fa-regular fa-circle-question fa-xl img"></i>
                 </button>
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
             </div>
@@ -69,21 +64,23 @@
             </li>
         </ul>
         <div>
-            <button class="iconBtn mr-auto img-prop">
-                <i class="fa-solid fa-circle-arrow-left fa-2xl"></i>
-            </button>
-            <button class="iconBtn mr-auto img-prop">
-                <i class="fa-regular fa-thumbs-up fa-2xl"></i>
-            </button>
-            <button class="iconBtn mr-auto img-prop">
-                <i class="fa-regular fa-thumbs-down fa-2xl"></i>
-            </button>
-            <button class="iconBtn mr-auto img-prop">
-                <i class="fa-solid fa-circle-arrow-right fa-2xl"></i>
-            </button>
+            <nav class="navbar fixed-bottom navbar-light bg-light">
+                <button class="iconBtn mr-auto img-prop">
+                    <i class="fa-solid fa-circle-arrow-left fa-xl"></i>
+                </button>
+                <button class="iconBtn mr-auto img-prop" id="up">
+                    <i class="fa-regular fa-thumbs-up fa-xl"></i>
+                </button>
+                <button class="iconBtn mr-auto img-prop" id="down">
+                    <i class="fa-regular fa-thumbs-down fa-xl"></i>
+                </button>
+                <button class="iconBtn mr-auto img-prop">
+                    <i class="fa-solid fa-circle-arrow-right fa-xl"></i>
+                </button>
+            </nav>
         </div>
         <button class="iconBtn mr-auto" style="padding-top: 25%; padding-bottom: 10%;">
-            <i class="fa-solid fa-arrow-down-long fa-2xl fa-bounce img"></i>
+            <i class="fa-solid fa-arrow-down-long fa-xl fa-bounce img"></i>
         </button>
         <h3 style="text-align: center; text-decoration: underline;"><b>Argument Summaries</b></h3>
         <ul class="cards">
@@ -123,6 +120,16 @@
     </body>
 </html>
 <script>
+    $('#up').click(function(){
+        $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check');
+         $(this).siblings('#down').find('i').removeClass('fa-solid fa-circle-check').addClass('fa-regular fa-circle');
+    });
+
+    $('#down').click(function(){
+        $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check');
+        $(this).siblings('#up').find('i').removeClass('fa-solid fa-circle-check').addClass('fa-regular fa-circle');
+    });
+
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');

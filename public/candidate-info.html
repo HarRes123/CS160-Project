@@ -198,7 +198,7 @@ function getParameterByName(name, url) {
     var number = parseInt(getParameterByName('number'));
     console.log("number", number)
 
-    // const selectedCandidate = allCandidates[selectedCandidate][number]
+    // const selectedCandidate = allCandidates[election][number]
     const selectedCandidate = allCandidates["state-assembly"][0]
 
     document.getElementById("candidate-name").innerText = selectedCandidate.name;

@@ -30,6 +30,38 @@
           }
         </script>
 
+        <script>
+          // Select all the buttons with the class "iconBtn"
+          const buttons = document.querySelectorAll('.iconBtn');
+
+          // Add a click event listener to each button
+          buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+              // Toggle the visibility of the next sibling element
+              const nextSibling = button.nextElementSibling;
+              nextSibling.style.display = nextSibling.style.display === 'none' ? 'flex' : 'none';
+              
+              // Toggle the chevron icon
+              const icon = button.querySelector('i');
+              icon.classList.toggle('fa-flip-vertical');
+              icon.classList.toggle('fa-chevron-right');
+              icon.classList.toggle('fa-chevron-up');
+            });
+          });
+
+
+
+          
+        </script>
+
+        <style>
+          .dropdown-content {
+            display: none;
+          }
+        </style>
+
+
+
           <div id="mySidepanel" class="sidepanel">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="/">Voting Guide</a>
@@ -40,61 +72,113 @@
     <!-- Race 1 -->
     <div style="display: inline-flex; width: 100%;">
       <h3 style="padding-bottom: 7%;"><b>District School Board</b></h3>
-      <button class="iconBtn">
-       <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
-    </button>
-    </div>
-    <div style="display: inline-flex; width: 80%;">
-      <h3 style="padding-bottom: 7%; font-weight: 500;">City Union Dean of Education</h3>
-      <button class="iconBtn">
+      <button class="iconBtn" id="districtButton">
         <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
-     </button>
+      </button>
     </div>
-    <div style="display: inline-flex; width: 80%;">
-      <h5 style="font-weight: 200; text-align: left;">Jane Doe</h5>
-      <button class="iconBtn" style="margin-left: 30%;">
-        <i class="fa-solid fa-circle-check fa-xl"></i>
-     </button>
-      <button class="iconBtn">
-        <i class="fa-regular fa-user fa-xl"></i>
-     </button>
+    
+    <div id="districtContent" style="display: none;">
+      <div style="display: inline-flex; width: 80%;">
+        <h3 style="padding-bottom: 7%; font-weight: 500;">City Union Dean of Education</h3>
+        <button class="iconBtn" id="cityButton">
+          <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
+        </button>
+      </div>
+      <div id="cityContent" style="display: none;">
+        <div style="display: inline-flex; width: 80%; margin-top:30px;">
+          <h5 style="font-weight: 200; text-align: left;">Jane Doe</h5>
+          <button class="iconBtn" style="margin-left: 30%;">
+            <i class="fa-solid fa-circle-check fa-xl"></i>
+          </button>
+          <button class="iconBtn">
+            <i class="fa-regular fa-user fa-xl"></i>
+          </button>
+        </div>
+      </div>
     </div>
+    
+    <script>
+      const districtButton = document.getElementById("districtButton");
+      const districtContent = document.getElementById("districtContent");
+      const cityButton = document.getElementById("cityButton");
+      const cityContent = document.getElementById("cityContent");
+    
+      districtButton.addEventListener("click", () => {
+        districtContent.style.display = districtContent.style.display === "none" ? "block" : "none";
+      });
+    
+      cityButton.addEventListener("click", () => {
+        cityContent.style.display = cityContent.style.display === "none" ? "block" : "none";
+      });
+    </script>
+    
     <!-- Race 1 End -->
     <hr style="width: 60%;">
-    <!-- Race 2 -->
-    <div style="display: inline-flex; width: 100%;">
-      <h3 style="padding-bottom: 7%;"><b>State Judge</b></h3>
-      <button class="iconBtn" style="padding-left:28%;">
-       <i class="fa-solid fa-chevron-right"></i>
-    </button>
-    </div>
-    <!-- Race 2 End -->
-    <hr style="width: 60%;">
-    <!-- Race 3 -->
-    <div style="display: inline-flex; width: 100%;">
+   
+    <!-- Race 2-->
+    <div id="propositions" style="display: inline-flex; width: 100%;">
       <h3 style="padding-bottom: 7%;"><b>Propositions</b></h3>
-      <button class="iconBtn" style="padding-left:26%;">
-       <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
-    </button>
-    </div>
-    <div style="display: inline-flex; width: 80%;">
-      <h5 style="font-weight: 200; text-align: left;">Prop 1234</h5>
-      <button class="iconBtn" style="margin-left: 28%;">
-        <i class="fa-solid fa-thumbs-down fa-xl"></i>
-     </button>
-      <button class="iconBtn">
-        <i class="fa-solid fa-circle-info fa-xl"></i>
-     </button>
-    </div>
-    <div style="display: inline-flex; width: 80%;">
-      <h5 style="font-weight: 200; text-align: left;">Prop 34D</h5>
-      <button class="iconBtn" style="margin-left: 29%;">
-        <i class="fa-solid fa-thumbs-up fa-xl"></i>
+      <button id="propositions-icon" class="iconBtn">
+        <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
       </button>
-      <button class="iconBtn">
-        <i class="fa-solid fa-circle-info fa-xl"></i>
-     </button>
     </div>
+    
+    <div id="propositions-content" class="dropdown-content" style="flex-direction: column; justify-content: display: none;">
+    
+      <div id="prop1" style="display: inline-flex; width: 80%;">
+        <h5 style="font-weight: 200; text-align: left;">Prop 1234</h5>
+        <button class="iconBtn" style="margin-left: 28%;">
+          <i class="fa-solid fa-thumbs-down fa-xl"></i>
+        </button>
+        <button class="iconBtn">
+          <i class="fa-solid fa-circle-info fa-xl"></i>
+        </button>
+      </div>
+      
+      <div id="prop2" style="display: inline-flex; width: 80%;">
+        <h5 style="font-weight: 200; text-align: left;">Prop 34D</h5>
+        <button class="iconBtn" style="margin-left: 29%;">
+          <i class="fa-solid fa-thumbs-up fa-xl"></i>
+        </button>
+        <button class="iconBtn">
+          <i class="fa-solid fa-circle-info fa-xl"></i>
+        </button>
+      </div>
+    
+    </div>
+
+    <script>
+
+      // Get references to the necessary elements
+      const propositionsIcon = document.getElementById("propositions-icon");
+      const propositionsContent = document.getElementById("propositions-content");
+
+      // Add event listener to toggle dropdown content
+      propositionsIcon.addEventListener("click", () => {
+        if (propositionsContent.style.display === "none") {
+          propositionsContent.style.display = "inline-flex";
+          propositionsIcon.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
+        } else {
+          propositionsContent.style.display = "none";
+          propositionsIcon.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+        }
+      });
+
+    </script>
+<!-- Race 2 End -->
+<hr style="width: 60%;">
+<!-- Race 3  -->
+
+<div style="display: inline-flex; width: 100%;">
+  <h3 style="padding-bottom: 7%;"><b>State Judge</b></h3>
+  <button class="iconBtn">
+    <i class="fa-solid fa-chevron-up fa-flip-vertical"></i>
+  </button>
+</div>
+
+    
+     
+
     <!-- Race 3 End -->
   </body>
 </html>

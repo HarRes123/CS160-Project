@@ -20,19 +20,21 @@
     </title>
   </head>
   <body>
-    <nav class="navbar-nav navbar-light sticky-top">
-      <div class="navbar">
-          <button class="iconBtn mr-auto">
-              <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
-          </button>
-          <button class="iconBtn mx-auto ">
-              <i class="fa-regular fa-circle-question fa-2xl img"></i> 
-          </button>
-          <button class="navbar-toggler ml-auto custom-toggler">
-              <span class="navbar-toggler-icon custom-toggler"></span>
-          </button>
-      </div>
-  </nav>
+    <button class="openbtn" onclick="openNav()">&#9776;</button> 
+        <script>
+          function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+          }
+          function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+          }
+        </script>
+
+          <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/guide">Voting Guide</a>
+            <a href="/ballot-tracker">Ballot Tracker</a>
+          </div>
     <h1 style="font-weight: 900;">Ballot Tracker</h1>
     <hr>
     <!-- Race 1 -->

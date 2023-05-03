@@ -21,7 +21,7 @@
     <body>
       <nav class="navbar-nav navbar-light sticky-top">
         <div class="navbar">
-            <button class="iconBtn mr-auto">
+            <button class="iconBtn mr-auto" onclick="history.back()">
                 <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
             </button>
             <button class="iconBtn mx-auto ">
@@ -33,36 +33,8 @@
         </div>
       </nav>
 
-        <h1><b>Voting</b></h1>
-        <h2 style="font-weight: 300;">City Union Dean of Education</h2>
-        <div id="vote-options" style="padding-bottom: 20%;">
-          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
-            <button class="iconBtn">
-              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
-            </button>
-            <div style="display: inline-block; vertical-align:middle; width: 80%;">
-              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 1</h5>
-              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Republican Party</p>
-            </div>
-          </div>
-          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
-            <button class="iconBtn">
-              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
-            </button>
-            <div style="display: inline-block; vertical-align:middle; width: 80%;">
-              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 2</h5>
-              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Democratic Party</p>
-            </div>
-          </div>
-          <div style="padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;">
-            <button class="iconBtn">
-              <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
-            </button>
-            <div style="display: inline-block; vertical-align:middle; width: 80%;">
-              <h5 style="padding-left: 5%; font-weight: 600;">Candidate 3</h5>
-              <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">Independent</p>
-            </div>
-          </div>
+      <div id="candidates-container">
+      </div>
         <!-- <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
           </div>
@@ -87,7 +59,9 @@
         </div>
         <div>
           <i class="fa-solid fa-circle-arrow-left fa-2xl img-prop"></i>
-          <i class="fa-regular fa-star fa-2xl img-prop"></i>
+          <button class="iconBtn" id="star">
+              <i class="fa-regular fa-star fa-2xl img-prop"></i>
+          </button>
           <i class="fa-solid fa-clipboard-check fa-2xl img-prop"></i>
           <i class="fa-solid fa-circle-arrow-right fa-2xl img-prop"></i>
       </div>
@@ -95,6 +69,103 @@
 </html>
 <script>
   $('#vote-options div button').click(function(){
-    $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check')
+    $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check');
 });
+$('#star').click(function(){
+    $(this).find('i').toggleClass('fa-regular fa-circle fa-solid fa-circle-check');
+});
+
+function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var election = getParameterByName('election');
+    console.log("election", election)
+
+
+    var electionTitle = ""
+    var candidates = []
+
+    if (election == "state-assembly") {
+    electionTitle = "California State Assembly District 19 Election";
+    candidates = [
+        {
+            name: "Phil Ting",
+            party: "Democratic Party"
+        },
+        {
+            name: "John P. McDonnell",
+            party: "Republican Party"
+        }
+    ];
+} else if (election == "sf-board-of-education") {
+    electionTitle = "San Francisco 2020 Board of Education Election";
+    candidates = [
+        {
+            name: "Jenny Lam",
+            party: "Nonpartisan"
+        },
+        {
+            name: "Kevine Boggess",
+            party: "Nonpartisan"
+        },
+        {
+            name: "Alida Fisher",
+            party: "Nonpartisan"
+        },
+        {
+            name: "Matt Alexander",
+            party: "Nonpartisan"
+        }
+    ];
+} else if (election == "sf-board-of-supervisors") {
+    electionTitle = "San Francisco 2020 Board of Supervisors District 3 Election";
+    candidates = [
+        {
+            name: "Aaron Peskin",
+            party: "Democratic Party"
+        },
+        {
+            name: "Danny Sauter",
+            party: "Democratic Party"
+        },
+        {
+            name: "Stephen Schwartz",
+            party: "Nonpartisan"
+        }
+    ];
+}
+
+
+    const container = document.getElementById("candidates-container");
+    container.innerHTML = `
+        <h1><b>Voting</b></h1>
+        <h2 style="font-weight: 300;" id="election-name">${electionTitle}</h2>
+        <div id="vote-options" style="padding-bottom: 20%;"></div>
+    `;
+
+    const voteOptions = document.getElementById("vote-options");
+
+    candidates.forEach(candidate => {
+        const candidateDiv = document.createElement("div");
+        candidateDiv.setAttribute("style", "padding-bottom: 5%; display: inline-block; width: 100%; padding-left: 10%;");
+
+        candidateDiv.innerHTML = `
+            <button class="iconBtn">
+                <i class="fa-regular fa-circle fa-2xl" style="display: inline-block;"></i>
+            </button>
+            <div style="display: inline-block; vertical-align:middle; width: 80%;">
+                <h5 style="padding-left: 5%; font-weight: 600;">${candidate.name}</h5>
+                <p style="padding-left: 5%; padding-top: 0; font-weight:200; font-size: large; text-align: left;">${candidate.party}</p>
+            </div>
+        `;
+
+        voteOptions.appendChild(candidateDiv);
+    });
 </script>

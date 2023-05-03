@@ -19,13 +19,21 @@
   </title>
 </head>
     <body>
-        <nav class="navbar-nav navbar-light">
-            <div class="navbar">
-                <button class="navbar-toggler ml-auto custom-toggler">
-                    <span class="navbar-toggler-icon custom-toggler"></span>
-                </button>
-            </div>
-          </nav>
+        <button class="openbtn" onclick="openNav()">&#9776;</button> 
+        <script>
+          function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+          }
+          function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+          }
+        </script>
+
+          <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/guide">Voting Guide</a>
+            <a href="/ballot-tracker">Ballot Tracker</a>
+          </div>
           
         <h1 style="font-weight: 800;">Voting Guide</h1>
         <h3 style="padding-top: 5%; font-weight: 300;"><i>Click on a card to access specific races.</i></h3>
@@ -45,8 +53,8 @@
         <!-- Card 1 Back -->
         <div class="card back shadow-sm">
           <div class="card-block">
-            <a href="#" class="btn btn-primary">Proposition 123</a>
-            <a href="#" class="btn btn-primary">Proposition 34D</a>
+            <a href="/proposition?prop=16" id="16" class="btn btn-primary">Proposition 16</a>
+            <a href="/proposition?prop=17" id="17" class="btn btn-primary">Proposition 17</a>
           </div>
         </div>
         <!-- End Card 1 Back -->
@@ -70,9 +78,9 @@
         <!-- Card 1 Back -->
         <div class="card back shadow-sm">
           <div class="card-block">
-            <a href="#" class="btn btn-primary">City Councilmember</a>
-            <a href="#" class="btn btn-primary">Judge</a>
-            <a href="#" class="btn btn-primary">City Union School District Dean of Education</a>
+            <a href="/voting-page?election=state-assembly" class="btn btn-primary">State Assembly</a>
+            <a href="/voting-page?election=sf-board-of-education" class="btn btn-primary">Board of Education</a>
+            <a href="/voting-page?election=sf-board-of-supervisors" class="btn btn-primary">Board of Supervisors</a>
           </div>
         </div>
         <!-- End Card 1 Back -->

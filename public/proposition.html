@@ -20,7 +20,7 @@
         <!-- Navigation Bar -->
         <nav class="navbar-nav navbar-light sticky-top">
             <div class="navbar">
-                <button class="iconBtn mr-auto">
+                <button class="iconBtn mr-auto" onclick="history.back()">
                     <i class="fa-solid fa-arrow-left fa-2xl img"></i> 
                 </button>
                 <button class="iconBtn mx-auto ">
@@ -32,17 +32,17 @@
             </div>
         </nav>
 
-        <h1><b>Proposition 123</b></h1>
-        <h3><i>
+        <h1 id="prop-number"><b>Proposition 123</b></h1>
+        <h3><i id="prop-question">
             Lorem ipsum dolor sit amet, 
             consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut?
         </i></h3>
         <ul>
-            <li>
+            <li id="prop-detail-1">
                 Ut enim ad minim veniam, quis nostrud exercitation.
             </li>
-            <li>
+            <li id="prop-detail-2">
                 Duis aute irure dolor in reprehenderit ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat.
             </li>
@@ -68,17 +68,15 @@
         <ul class="cards">
             <li class="card">
               <div>
-                <h3 class="card-title">Voting <b><i>YES</i></b> means:</h3>
+                <h3 class="card-title"> Voting <b><i>YES</i></b> means:</h3>
                 <div class="card-content">
                     <ul>
-                        <li>
-                            labore et dolore magna aliqua. Ut enim 
-                            ad minim veniam, quis nostrud exercitation 
-                            ullamco laboris nisi 
+                        <li id="yes-detail-1">
+                            Duis aute irure dolor in reprehenderit ullamco laboris 
+                            nisi ut aliquip ex ea commodo consequat.
                         </li>
-                        <li>
-                            ut aliquip ex ea commodo consequat. Duis 
-                            aute irure dolor in reprehenderit
+                        <li id="yes-detail-2">
+                            Duis aute irure dolor in reprehenderit ullamco laboris 
                         </li>
                     </ul>
                 </div>
@@ -90,14 +88,11 @@
                   <h3 class="card-title">Voting <b><i>NO</i></b> means:</h3>
                   <div class="card-content">
                     <ul>
-                        <li>
-                            labore et dolore magna aliqua. Ut enim 
-                            ad minim veniam, quis nostrud exercitation 
-                            ullamco laboris nisi 
+                        <li id="no-detail-1">
+                            Duis aute irure dolor in reprehenderit ullamco laboris 
                         </li>
-                        <li>
-                            ut aliquip ex ea commodo consequat. Duis 
-                            aute irure dolor in reprehenderit
+                        <li id="no-detail-2">
+                            Duis aute irure dolor in reprehenderit ullamco laboris 
                         </li>
                     </ul>
                   </div>
@@ -106,3 +101,43 @@
         </ul>
     </body>
 </html>
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var prop = getParameterByName('prop');
+    console.log("prop", prop)
+
+    document.getElementById('prop-number').innerHTML = `<b>Proposition ${prop}</b>`
+
+    if (prop=="16") {
+        document.getElementById("prop-question").innerHTML = "Should California reinstate affirmative action, allowing public institutions to consider race, sex, ethnicity, and national origin in admissions, hiring, and contracting decisions?";
+        document.getElementById("prop-detail-1").innerHTML = "Passed in 1996, Proposition 209 banned the consideration of race, sex, ethnicity, and national origin in public institutions' decisions.";
+        document.getElementById("prop-detail-2").innerHTML = "Proposition 16 aims to repeal Proposition 209, enabling affirmative action programs to address historical and systemic discrimination.";
+
+        document.getElementById("yes-detail-1").innerHTML = "You support reinstating affirmative action in California, allowing public institutions to consider race, sex, ethnicity, and national origin in admissions, hiring, and contracting decisions.";
+        document.getElementById("yes-detail-2").innerHTML = "You believe that affirmative action can help address historical and systemic discrimination and improve diversity in education and employment.";
+
+        document.getElementById("no-detail-1").innerHTML = "You oppose reinstating affirmative action in California, maintaining the current ban on considering race, sex, ethnicity, and national origin in public institutions' admissions, hiring, and contracting decisions.";
+        document.getElementById("no-detail-2").innerHTML = "You believe that affirmative action may lead to reverse discrimination and that decisions should be based on merit alone.";
+    }
+
+    if (prop=="17") {
+        document.getElementById("prop-question").innerHTML = "Should California allow people on parole for felony convictions to vote?";
+        document.getElementById("prop-detail-1").innerHTML = "Currently, people with felony convictions in California can vote only after they have completed their parole.";
+        document.getElementById("prop-detail-2").innerHTML = "Proposition 17 aims to grant voting rights to individuals on parole, allowing them to participate in the democratic process.";
+
+        document.getElementById("yes-detail-1").innerHTML = "You support granting voting rights to individuals on parole for felony convictions in California.";
+        document.getElementById("yes-detail-2").innerHTML = "You believe that allowing parolees to vote can help them reintegrate into society and positively contribute to their communities.";
+
+        document.getElementById("no-detail-1").innerHTML = "You oppose granting voting rights to individuals on parole for felony convictions in California.";
+        document.getElementById("no-detail-2").innerHTML = "You believe that voting rights should only be restored after the completion of parole as a part of the consequences for committing a felony.";
+    }
+</script>
